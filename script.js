@@ -25,7 +25,7 @@ init()
 function getQuestions(id, score) {
   $.ajax({
     method: 'GET',
-    url: baseURL + `?difficulty=${id}&limit=1`,
+    url: baseURL + `?difficulty=${id}&limit=9`,
     success: function (results) {
       console.log(results[0].correctAnswer)
       let count = i++
@@ -58,7 +58,7 @@ function displayQuestions(id, results, score) {
       <button>${randomArr[2]}</button>
       <button>${randomArr[3]}</button>
     </div>
-    <h1 class="alert-msg" style="opacity:0"></h1>
+    <h2 class="alert-msg" style="opacity:0"></h2>
   </div>
   `;
 

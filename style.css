@@ -83,7 +83,7 @@ button:hover {
 
 #btn-div {
   display: grid;
-  grid-template-columns: 500px 500px;
+  grid-template-columns: auto auto;
   column-gap: 12px;
   margin: 25px 50px 0 50px;
 }
@@ -146,16 +146,31 @@ button:hover {
 
 @media only screen and (max-width: 1062px) {
   button {
-    width: 35%;
+    width: 45%;
+    font-size: 1.4em;
+    padding: 5px;
   }
 
   #btn-div {
     display: grid;
-    grid-template-columns: 450px;
+    grid-template-columns: auto;
   }
 
   .quiz-body {
     width: 95%;
     margin: auto;
+    padding-top: 5vh;
+  }
+
+  .quiz-body h1 {
+    font-size: 3em;
+  }
+
+  #quiz-qst {
+    font-size: 1.5em;
+  }
+
+  .alert-msg {
+    font-size: 1.5em;
   }
 }
