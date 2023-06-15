@@ -27,9 +27,9 @@ function getQuestions(id, score) {
     method: 'GET',
     url: baseURL + `?difficulty=${id}&limit=1`,
     success: function (results) {
-      console.log(results[0].correctAnswer)
+      console.log(results)
       let count = i++
-      if (count >= 9) {
+      if (count >= 10) {
         scoreBoard(score)
       }
       else {
@@ -67,7 +67,7 @@ function displayQuestions(id, results, score) {
       const alertMessage = document.querySelector('.alert-msg')
       const scorePopup = document.querySelector('.score-popup')
       if (event.target.innerHTML === corAns) {
-        alertMessage.innerHTML = 'Correct! Moving to next question...'
+        alertMessage.innerHTML = 'Correct! 100 points gained!'
         let score = x += 100
         let scoreUpdate = document.querySelector('.quiz-score')
         scoreUpdate.innerHTML = `Score: ${score}`
