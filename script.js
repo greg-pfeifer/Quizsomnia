@@ -25,11 +25,11 @@ init()
 function getQuestions(id, score) {
   $.ajax({
     method: 'GET',
-    url: baseURL + `?difficulty=${id}&limit=9`,
+    url: baseURL + `?difficulty=${id}&limit=1`,
     success: function (results) {
       console.log(results[0].correctAnswer)
       let count = i++
-      if (count >= 1) {
+      if (count >= 9) {
         scoreBoard(score)
       }
       else {
@@ -45,7 +45,6 @@ function displayQuestions(id, results, score) {
   let incAns = results[0].incorrectAnswers
   let randomArr = [corAns, ...incAns]
   randomArr.sort(() => (Math.random() > .5) ? 1 : -1)
-
   let body =
     `
   <div id="quiz-div">
@@ -61,15 +60,12 @@ function displayQuestions(id, results, score) {
     <h2 class="alert-msg" style="opacity:0"></h2>
   </div>
   `;
-
   quizBody.innerHTML = body
   const checkButtons = document.querySelectorAll('button')
   checkButtons.forEach(checkButtons => {
     checkButtons.addEventListener('click', (event) => {
-
       const alertMessage = document.querySelector('.alert-msg')
       const scorePopup = document.querySelector('.score-popup')
-
       if (event.target.innerHTML === corAns) {
         alertMessage.innerHTML = 'Correct! Moving to next question...'
         let score = x += 100
@@ -81,7 +77,6 @@ function displayQuestions(id, results, score) {
           getQuestions(qstDiff, score)
         }, 2500)
       }
-
       else {
         alertMessage.innerHTML = 'Incorrect! 50 points lost!'
         let score = x -= 50
@@ -110,3 +105,4 @@ function scoreBoard(score) {
     window.location.assign('./index.html')
   })
 }
+
