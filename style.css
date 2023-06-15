@@ -1,0 +1,161 @@
+
+
+/* Global styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Geologica;
+}
+
+body {
+  margin: 0;
+}
+
+/* Start page styling */
+
+.quiz-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12vh;
+  width: 100%;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p {
+ font-size: 2em; 
+}
+
+form {
+  padding: 10px 0 10px 0;
+}
+
+label {
+ font-size: 2em; 
+}
+
+input {
+  display: table-cell;
+  vertical-align: baseline;
+  padding: 10px;
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  font-size: 1.55em;
+  border-radius: 50px;
+  width: 15%;
+  padding: 10px;
+  margin: 5px;
+  background-color: darkslateblue;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightblue;
+  color: darkslateblue;
+}
+
+/* Quiz page styling */
+
+#quiz-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#quiz-qst {
+  font-size: 3em;
+  text-align: center;
+  padding: 35px 30px 0 30px; 
+}
+
+#btn-div {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  column-gap: 12px;
+  margin: 25px 50px 0 50px;
+}
+
+#btn-div button {
+  border-radius: 15px;
+  width: 100%;
+  padding: 20px;
+}
+
+.quiz-score {
+  font-weight: bold;
+}
+
+.score-popup {
+  position: absolute;
+  top: 45px;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  animation-name: score-popup;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+@keyframes score-popup {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.alert-msg {
+  font-style: italic;
+  padding: 20px;
+  font-size: 2.5em;
+  text-align: center;
+  animation-name: correct;
+  animation-duration: 3s;
+  animation-iteration-count: 10;
+  animation-fill-mode: forwards;
+}
+
+@keyframes correct {
+  from {opacity: 1; color: yellow;}
+  to {opacity: 1; color: green;}
+}
+
+.score-board {
+  text-align: center;
+}
+
+.score-board button {
+  width: 50%;
+}
+
+.score-board h2 {
+  padding: 15px 0 15px 0;
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 1062px) {
+  button {
+    width: 35%;
+  }
+
+  #btn-div {
+    display: grid;
+    grid-template-columns: 450px;
+  }
+
+  .quiz-body {
+    width: 95%;
+    margin: auto;
+  }
+}
