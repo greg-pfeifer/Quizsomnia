@@ -27,7 +27,6 @@ function getQuestions(id, score) {
     method: 'GET',
     url: baseURL + `?difficulty=${id}&limit=1`,
     success: function (results) {
-      console.log(results, results[0].correctAnswer)
       let count = i++
       if (count >= 10) {
         scoreBoard(score)
